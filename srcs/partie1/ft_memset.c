@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/03 11:59:47 by rdehouck         ###   ########lyon.fr   */
+/*   Created: 2021/11/03 11:40:42 by rdehouck          #+#    #+#             */
+/*   Updated: 2021/11/03 12:04:29 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-//includes
-# include <stdio.h>
-# include <stdlib.h>
+void	*ft_memset(void *buf, int c, int len)
+{
+	int				i;
+	unsigned char	*array;
 
-int		ft_isalpha(int n);
-int		ft_isdigit(int n);
-int		ft_isalnum(int n);
-int		ft_isascii(int n);
-int		ft_isprint(int n);
-int		ft_strlen(char *str);
-void	*ft_memset(void *buf, int c, int len);
-
-#endif
+	array = buf;
+	i = 0;
+	while (i < len)
+	{
+		array[i] = c;
+		i++;
+	}	
+	return (buf);
+}

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/03 11:59:47 by rdehouck         ###   ########lyon.fr   */
+/*   Created: 2021/11/03 10:42:59 by rdehouck          #+#    #+#             */
+/*   Updated: 2021/11/03 11:35:15 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-//includes
-# include <stdio.h>
-# include <stdlib.h>
+int	ft_isprint(int n)
+{
+	unsigned char	c;
 
-int		ft_isalpha(int n);
-int		ft_isdigit(int n);
-int		ft_isalnum(int n);
-int		ft_isascii(int n);
-int		ft_isprint(int n);
-int		ft_strlen(char *str);
-void	*ft_memset(void *buf, int c, int len);
-
-#endif
+	c = (unsigned char) n;
+	return (c >= 32 && c <= 126);
+}
