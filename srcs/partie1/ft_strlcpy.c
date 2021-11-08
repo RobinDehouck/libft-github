@@ -3,34 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 20:32:46 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/07 20:38:15 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/08 14:59:48 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcpy(char *dest, char *source, int length)
+size_t	ft_strlcpy(char *dest, char *source, size_t length)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while(i < length)
+	while (source[i] && i < length)
 	{
 		dest[i] = source[i];
 		i++;
 	}
-	return (dest);
+	if (i < length)
+		dest[i] = 0;
+	else
+		dest[i - 1] = 0;
+	return (ft_strlen(source));
 }
-
-/*
-int main()
-{
-	char dest[30];
-	char source[] = "bonjour c est source";
-
-	printf("%s", ft_strlcpy(dest, source, 10));
-}
-*/

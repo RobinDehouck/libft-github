@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/07 20:27:06 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/08 16:10:33 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int		ft_isascii(int n);
 int		ft_isprint(int n);
 int		ft_strlen(char *str);
 void	*ft_memset(void *buf, int c, int len);
-void	ft_memcpy (void *dest, void *source, unsigned int bit_size);
-void	ft_memmove(void *dest, void *source, unsigned int bit_size);
+void	ft_bzero(void *string, int len);
+void	*ft_memcpy(void *dest, void *source, unsigned int bit_size);
+void	*ft_memmove(void *dest, void *source, unsigned int bit_size);
+size_t	ft_strlcpy(char *dest, char *source, size_t length);
+size_t	ft_strlcat(char *dest, char *source, size_t dest_size);
 
 #endif
