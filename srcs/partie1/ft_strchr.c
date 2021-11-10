@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:36:17 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/10 13:24:02 by rdehouck         ###   ########lyon.fr   */
+/*   Created: 2021/11/10 11:44:33 by rdehouck          #+#    #+#             */
+/*   Updated: 2021/11/10 14:52:49 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int n)
+char	*ft_strchr(const char *source, int c)
 {
-	return (((n >= 'a' && n <= 'z')
-			|| (n >= 'A' && n <= 'Z'))
-		|| (n >= '0' && n <= '9'));
+	int		i;
+	char	*located;
+
+	located = (char *)source;
+	i = 0;
+	if ((char) c == 0)
+	{
+		while (located[i])
+			i++;
+		return (&located[i]);
+	}
+	while (located[i])
+	{
+		if (located[i] == (char)c)
+			return (&located[i]);
+		i++;
+	}
+	return (NULL);
 }
 /*
-int main()
+int	main()
 {
-	char t = ';';
-	printf("%d",ft_isalnum(t));
-}
-*/
+	char *test = "bonjour";
+	printf("moi :%s", ft_strchr(test, 'o' + 256));
+	printf("\ntst :%s", strchr(test, 'o' + 256));
+}*/

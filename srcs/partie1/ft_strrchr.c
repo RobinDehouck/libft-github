@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:36:17 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/10 13:24:02 by rdehouck         ###   ########lyon.fr   */
+/*   Created: 2021/11/10 12:52:39 by rdehouck          #+#    #+#             */
+/*   Updated: 2021/11/10 13:01:18 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int n)
+char	*ft_strrchr(const char *source, int c)
 {
-	return (((n >= 'a' && n <= 'z')
-			|| (n >= 'A' && n <= 'Z'))
-		|| (n >= '0' && n <= '9'));
+	int		i;
+	char	*located;
+
+	located = (char *) source;
+	i = ft_strlen(source);
+	while (i >= 0)
+	{
+		if (located[i] == c)
+			return (&located[i]);
+		i--;
+	}
+	return (NULL);
 }
 /*
-int main()
+int	main()
 {
-	char t = ';';
-	printf("%d",ft_isalnum(t));
-}
-*/
+	char *test = "bonjour";
+	printf("moi :%s", ft_strrchr(test, 't'));
+	printf("\ntst :%s", strrchr(test, 't'));
+}*/

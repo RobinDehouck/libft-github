@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:42:59 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/03 11:35:15 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 13:23:13 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int	ft_isprint(int n)
 {
-	unsigned char	c;
-
-	c = (unsigned char) n;
-	return (c >= 32 && c <= 126);
+	return (n >= 32 && n <= 126);
 }

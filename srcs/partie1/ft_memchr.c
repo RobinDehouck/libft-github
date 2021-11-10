@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:36:17 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/10 13:24:02 by rdehouck         ###   ########lyon.fr   */
+/*   Created: 2021/11/10 14:27:07 by rdehouck          #+#    #+#             */
+/*   Updated: 2021/11/10 16:13:19 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int n)
+void	*ft_memchr(const void *source, int c, size_t n)
 {
-	return (((n >= 'a' && n <= 'z')
-			|| (n >= 'A' && n <= 'Z'))
-		|| (n >= '0' && n <= '9'));
+	size_t		i;
+
+	i = 0;
+	while (((char *) source)[i] && i < n)
+	{
+		if (((unsigned char *) source)[i] == (unsigned char) c)
+			return ((char *)&source[i]);
+		i++;
+	}
+	return (NULL);
 }
 /*
-int main()
+int	main()
 {
-	char t = ';';
-	printf("%d",ft_isalnum(t));
-}
-*/
+	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
+
+	printf("%s\n", (char *)ft_memchr(tab, -1, 7));
+	printf("%s\n", (char *) memchr(tab, -1, 7));
+}*/

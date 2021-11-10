@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:27:06 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/03 10:41:00 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 13:24:58 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 int	ft_isascii(int n)
 {
-	unsigned char	c;
-
-	c = (unsigned char) n;
-	return (c >= 0 && c <= 127);
+	return (n >= 0 && n <= 127);
 }
 /*
 int	main()
 {
-	char t = '~';
+	char t = -10;
 	printf("%d", ft_isascii(t));
 	return 0;
-}
-*/
+}*/

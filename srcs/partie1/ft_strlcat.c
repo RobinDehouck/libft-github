@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:02:26 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/09 15:02:50 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/10 11:39:05 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t j;
-	size_t src_len;
-	size_t dst_len;
+	size_t	i;
+	size_t	j;
+	size_t	src_len;
+	size_t	dst_len;
 
 	j = 0;
 	dst_len = ft_strlen(dst);

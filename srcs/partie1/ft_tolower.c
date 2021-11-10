@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:36:17 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/10 13:24:02 by rdehouck         ###   ########lyon.fr   */
+/*   Created: 2021/11/10 11:39:14 by rdehouck          #+#    #+#             */
+/*   Updated: 2021/11/10 11:43:26 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int n)
+int	ft_tolower(int c)
 {
-	return (((n >= 'a' && n <= 'z')
-			|| (n >= 'A' && n <= 'Z'))
-		|| (n >= '0' && n <= '9'));
+	if (c >= 65 && c <= 90)
+	{
+		c += 32;
+	}
+	return (c);
 }
-/*
-int main()
-{
-	char t = ';';
-	printf("%d",ft_isalnum(t));
-}
-*/
