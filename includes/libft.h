@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/10 16:54:06 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/11 15:21:21 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int			ft_strncmp(const char *source1, const char *source2, size_t n);
 void		*ft_memchr(const void *source, int c, size_t n);
 int			ft_memcmp(const void *source1, const void *source2, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int			ft_putnumber(const char *source, int i);
 
 #endif
