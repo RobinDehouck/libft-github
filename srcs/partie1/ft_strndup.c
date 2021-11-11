@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 20:05:18 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/11 18:33:17 by robindehouc      ###   ########.fr       */
+/*   Created: 2021/11/11 19:14:28 by robindehouc       #+#    #+#             */
+/*   Updated: 2021/11/11 19:23:42 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *string, int byte_length)
+char	*ft_strndup(const char *source, size_t n)
 {
-	int				i;
-	unsigned char	*c;
+	char	*copy;
+	int		i;
 
-	c = string;
 	i = 0;
-	while (i < byte_length)
+	copy = malloc(n * sizeof(copy));
+	while (i < n && source[i])
 	{
-		c[i] = 0;
+		copy[i] = source[i];
 		i++;
 	}
+	copy[i] = '\0';
+	return (copy);
 }
 /*
 int main()
 {
-    char array[80] = "Bonjour";
-    printf("1: %s\n", array);
-    ft_bzero(array, 0);
-    printf("2: %s\n", array);
-    bzero(array, 0);
-    printf("3: %s", array);
-}
-*/
+	char *source = "Bonjour";
+	printf("%s", ft_strndup(source, 25));
+}*/

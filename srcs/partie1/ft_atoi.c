@@ -6,7 +6,7 @@
 /*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:36:05 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/11 15:20:56 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/11 18:04:07 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ int ft_atoi(const char *number)
 /*
 int main()
 {
-	printf("%d", ft_atoi("  "));
-	printf("\n%d", atoi("  "));
-}*/
+	printf("%d", ft_atoi(" 42") * 2);
+}
+*/
