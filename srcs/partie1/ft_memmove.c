@@ -3,32 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 20:31:03 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/08 13:36:24 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/11 23:36:46 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, void *source, unsigned int bit_size)
+// copier len bytes de source dans dest, overlap autorisé mais il ne faut pas
+// avoir de pertes.
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char			*cdest;
-	char			*csource;
-	char			*ctemp;
-	unsigned int	i;
+	char	*s;
+	char	*d;
+	size_t	i;
 
-	ctemp = malloc(sizeof(ctemp) * bit_size);
-	cdest = (char *)dest;
-	csource = (char *)source;
+	s = (char *)src;
+	d = (char *)dest;
 	i = 0;
-	while (i < bit_size)
-	{
-		ctemp[i] = csource[i];
-		cdest[i] = csource[i];
-		i++;
-	}
+	if (d > s)
+		while (len-- > 0)
+			d[len] = s[len];
+	else
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	return (dest);
 }
 /*

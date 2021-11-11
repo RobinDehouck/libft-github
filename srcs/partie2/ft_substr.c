@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 19:14:28 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/11 22:59:04 by robindehouc      ###   ########.fr       */
+/*   Created: 2021/11/11 23:00:09 by robindehouc       #+#    #+#             */
+/*   Updated: 2021/11/11 23:13:07 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *source, size_t n)
+char	*ft_substr(char const *source, unsigned int start, size_t len)
 {
-	char	*copy;
 	int		i;
+	char	*substring;
 
 	i = 0;
-	copy = malloc(n * sizeof(copy));
-	if (copy == NULL)
+	substring = malloc(sizeof(substring) * len);
+	if (substring == NULL)
 		return (NULL);
-	while (i < n && source[i])
+	while (source[start] && i < len)
 	{
-		copy[i] = source[i];
+		substring[i] = source[start];
 		i++;
+		start++;
 	}
-	copy[i] = '\0';
-	return (copy);
+	substring[i] = 0;
+	return (substring);
 }
 /*
-int main()
+int	main()
 {
-	char *source = "Bonjour";
-	printf("%s", ft_strndup(source, 25));
+	char *source = " Bonjour ";
+	printf("%s", ft_substr(source, 0, 3));
 }*/

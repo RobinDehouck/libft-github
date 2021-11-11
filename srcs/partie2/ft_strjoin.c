@@ -1,37 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 19:14:28 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/11 22:59:04 by robindehouc      ###   ########.fr       */
+/*   Created: 2021/11/11 23:14:40 by robindehouc       #+#    #+#             */
+/*   Updated: 2021/11/11 23:15:00 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *source, size_t n)
-{
-	char	*copy;
-	int		i;
-
-	i = 0;
-	copy = malloc(n * sizeof(copy));
-	if (copy == NULL)
-		return (NULL);
-	while (i < n && source[i])
-	{
-		copy[i] = source[i];
-		i++;
-	}
-	copy[i] = '\0';
-	return (copy);
-}
-/*
-int main()
-{
-	char *source = "Bonjour";
-	printf("%s", ft_strndup(source, 25));
-}*/

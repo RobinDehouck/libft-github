@@ -6,7 +6,7 @@
 /*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:24:36 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/11 19:13:23 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/11 22:58:55 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nelements, size_t byte_size)
 
 	p = malloc(nelements * byte_size);
 	if (p == NULL)
-		return (0);
+		return (NULL);
 	ft_bzero(p, nelements * byte_size);
 	return (p);
 }
