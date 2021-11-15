@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 23:00:09 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/15 17:14:26 by rdehouck         ###   ########lyon.fr   */
+/*   Created: 2021/11/15 17:18:26 by rdehouck          #+#    #+#             */
+/*   Updated: 2021/11/15 17:23:40 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *source, unsigned int start, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int,char*))
 {
-	size_t		i;
-	char		*substring;
+	unsigned int	i;
 
 	i = 0;
-	substring = malloc(sizeof(substring) * len);
-	if (substring == NULL)
-		return (NULL);
-	while (source[start] && i < len)
+	while (s[i])
 	{
-		substring[i] = source[start];
+		f(i, &s[i]);
 		i++;
-		start++;
 	}
-	substring[i] = 0;
-	return (substring);
 }
-/*
-int	main()
-{
-	char *source = " Bonjour ";
-	printf("%s", ft_substr(source, 0, 3));
-}*/

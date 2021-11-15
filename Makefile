@@ -6,7 +6,7 @@
 #    By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 15:37:55 by rdehouck          #+#    #+#              #
-#    Updated: 2021/11/02 16:06:34 by rdehouck         ###   ########lyon.fr    #
+#    Updated: 2021/11/15 17:16:12 by rdehouck         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libft.a
 
 DIR_SRCS	= srcs
 DIR_OBJS	= objs
-SUBDIRS		= partie1 
+SUBDIRS		= partie1 partie2
 
 SRCS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 OBJS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))

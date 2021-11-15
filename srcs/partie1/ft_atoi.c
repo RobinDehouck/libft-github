@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:36:05 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/11 18:04:07 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/15 17:07:18 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // 1 : skeep any space(s) before first digit
-// 2 : stop at first character which isn't a digit after encountering first digit
+// 2 : stop at first character which isn't a digit 
+// after encountering first digit
 // 3 : read up to one '-' or '+', otherwise return 0
 // 4 : if no digit, return 0
 
@@ -37,24 +38,24 @@ int	ft_clean(const char *source)
 	int	i;
 
 	i = 0;
-	while ((source[i] >= 9 && source[i] <= 12) || source[i] == 32)
+	while ((source[i] >= 9 && source[i] <= 13) || source[i] == 32)
 	{
 		i++;
 	}
 	return (i);
 }
 
-int ft_atoi(const char *number)
+int	ft_atoi(const char *number)
 {
 	int	sign;
 	int	i;
-	int final_number;
+	int	final_number;
 
 	sign = 1;
 	i = ft_clean(number);
 	if (number[i] == '+')
 		i++;
-	if (number[i] == '-')
+	else if (number[i] == '-')
 	{
 		i++;
 		sign *= -1;
@@ -65,6 +66,6 @@ int ft_atoi(const char *number)
 /*
 int main()
 {
-	printf("%d", ft_atoi(" 42") * 2);
+	printf("%d", ft_atoi("\t\n\r\v\f  469 \n"));
 }
 */
