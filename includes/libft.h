@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/15 17:18:57 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/16 00:32:46 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //includes
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int			ft_isalpha(int n);
 int			ft_isdigit(int n);
@@ -44,6 +45,9 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_itoa(int nb);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int,char*));
-
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putendl_fd(char *s, int fd);
+void		ft_putnbr_fd(int n, int fd);
 
 #endif
