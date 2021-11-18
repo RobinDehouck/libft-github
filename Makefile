@@ -6,7 +6,7 @@
 #    By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/02 15:37:55 by rdehouck          #+#    #+#              #
-#    Updated: 2021/11/15 17:16:12 by rdehouck         ###   ########lyon.fr    #
+#    Updated: 2021/11/18 16:55:49 by rdehouck         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,16 @@ SUBDIRS		= partie1 partie2
 
 SRCS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 OBJS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))
-SRCS		= $(foreach dir, $(SRCS_DIRS), $(wildcard $(dir)/*.c))
-OBJS		= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
+SRCS		= $(wildcard *.c)
+OBJS		= $(patsubst %.c,%.o,$(wildcard *.c))
 
-INCLUDES	= -I includes
+INCLUDES	= -I
 
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror
 RM		= /bin/rm -f
 
-$(DIR_OBJS)/%.o :	$(DIR_SRCS)/%.c
+%.o :	%.c
 			@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 			@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
