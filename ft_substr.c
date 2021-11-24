@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:00:09 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/18 14:14:23 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 13:50:37 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *source, unsigned int start, size_t len)
 	if (substring == NULL)
 		return (NULL);
 	if (start >= ft_strlen(source))
-		return(substring);
+		return (substring);
 	while (source[start] && i < len)
 	{
 		substring[i] = source[start];

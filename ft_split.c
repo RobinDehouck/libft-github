@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:17:13 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/18 14:18:41 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 13:48:39 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	index = -1;
-	while (i <= ft_strlen(s))
+	while (i++ <= ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;
@@ -86,7 +86,6 @@ char	**ft_split(char const *s, char c)
 			split[j++] = word_dup(s, index, i, split);
 			index = -1;
 		}
-		i++;
 	}
 	split[j] = 0;
 	return (split);

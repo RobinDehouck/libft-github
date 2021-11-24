@@ -6,19 +6,18 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 13:35:50 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/18 15:29:11 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 13:47:13 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // memcpy will copy n bits from source into dest. Overlaps will cause issues.
-void	*ft_memcpy(void *dest, void *source, unsigned int bit_size)
+void	*ft_memcpy(void *dest, const void *source, size_t bit_size)
 {
 	char			*chardest;
 	char			*charsource;
-	unsigned int	i;
-
+	size_t			i;
 
 	chardest = (char *)dest;
 	charsource = (char *)source;

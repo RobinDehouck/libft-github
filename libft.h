@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/18 11:49:23 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/24 12:18:09 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int			ft_isprint(int n);
 size_t		ft_strlen(const char *str);
 void		*ft_memset(void *buf, int c, int len);
 void		ft_bzero(void *string, int byte_length);
-void		*ft_memcpy(void *dest, void *source, unsigned int bit_size);
+void		*ft_memcpy(void *dest, const void *source, size_t bit_size);
 void		*ft_memmove(void *dest, const void *src, size_t len);
 size_t		ft_strlcpy(char *dest, char *source, size_t length);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
