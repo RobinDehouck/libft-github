@@ -6,13 +6,13 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 20:32:46 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/08 14:59:48 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 13:32:20 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *source, size_t length)
+size_t	ft_strlcpy(char *dest, const char *source, size_t length)
 {
 	size_t	i;
 

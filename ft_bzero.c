@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 20:05:18 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/11 18:33:17 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/29 16:27:47 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *string, int byte_length)
+void	ft_bzero(void *string, size_t byte_length)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*c;
 
 	c = string;

@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/24 12:18:09 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 15:59:16 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int			ft_isalnum(int n);
 int			ft_isascii(int n);
 int			ft_isprint(int n);
 size_t		ft_strlen(const char *str);
-void		*ft_memset(void *buf, int c, int len);
-void		ft_bzero(void *string, int byte_length);
+void		*ft_memset(void *buf, int c, size_t len);
+void		ft_bzero(void *string, size_t byte_length);
 void		*ft_memcpy(void *dest, const void *source, size_t bit_size);
 void		*ft_memmove(void *dest, const void *src, size_t len);
-size_t		ft_strlcpy(char *dest, char *source, size_t length);
+size_t		ft_strlcpy(char *dest, const char *source, size_t length);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
@@ -50,7 +50,7 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strtrim(char const *source, char const *set);
-char		**ft_split(char const *s, char c);
+char		**ft_split(char const *s, char charset);
 char		*ft_strjoin(char const *source1, char const *source2);
 
 #endif

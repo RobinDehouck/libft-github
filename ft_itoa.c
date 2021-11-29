@@ -3,24 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:54:22 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/28 17:29:52 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/11/29 15:45:06 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// test des fonction static qui ne s appellent que dans le fichier courant
-
-#include "libft.h"
-
-char	*ft_strmall(size_t size)
+static char	*ft_strmall(size_t size)
 {
 	char	*str;
 
-	if (!(str = (char*)malloc(sizeof(*str) * (size + 1))))
+	str = (char *)malloc(sizeof(*str) * (size + 1));
+	if (!(str))
 		return (NULL);
 	ft_bzero(str, size + 1);
 	return (str);
@@ -28,7 +25,7 @@ char	*ft_strmall(size_t size)
 
 static int	count_size(int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n < 0)
@@ -41,7 +38,7 @@ static int	count_size(int n)
 	return (i);
 }
 
-char		*ft_itoa(int num)
+char	*ft_itoa(int num)
 {
 	char		*dest;
 	int			counter;
@@ -53,7 +50,8 @@ char		*ft_itoa(int num)
 	i = 0;
 	if (n < 0 || counter == 0)
 		counter++;
-	if (!(dest = ft_strmall(counter)))
+	dest = ft_strmall(counter);
+	if (!(dest))
 		return (NULL);
 	if (n < 0)
 	{
@@ -63,8 +61,7 @@ char		*ft_itoa(int num)
 	}
 	while (counter > i)
 	{
-		counter--;
-		dest[counter] = (n % 10) + '0';
+		dest[--counter] = (n % 10) + '0';
 		n /= 10;
 	}
 	return (dest);

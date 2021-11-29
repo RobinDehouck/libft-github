@@ -6,13 +6,13 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:17:13 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/24 13:48:39 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 15:42:57 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_clear_malloc(char **tab)
+static void	*ft_clear_malloc(char **tab)
 {
 	unsigned int	i;
 
@@ -77,15 +77,15 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	index = -1;
-	while (i++ <= ft_strlen(s))
+	while (i <= ft_strlen(s))
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
+		if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 			split[j++] = word_dup(s, index, i, split);
+		if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 			index = -1;
-		}
+		else if (s[i] != c && index < 0)
+			index = i;
+		i++;
 	}
 	split[j] = 0;
 	return (split);
@@ -95,11 +95,17 @@ int	main()
 {
 	char **array = ft_split(" ba nan            e ", ' ');
 	int i = 0;
+	char **tab;
+	tab = ft_split("chin  im ala", ' ');
+	
+	printf("%s\n", tab[3]);
+	
 	
 	while (i < 10)
 	{
 		printf("%s\n", array[i]);
 		i++;
 	}
+	
 }
 */

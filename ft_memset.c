@@ -6,15 +6,15 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:40:42 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/03 12:04:29 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 16:27:31 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *buf, int c, int len)
+void	*ft_memset(void *buf, int c, size_t len)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*array;
 
 	array = buf;

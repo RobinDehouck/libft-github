@@ -6,13 +6,13 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 00:29:43 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/18 11:56:28 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 15:45:25 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c, int fd)
+static void	ft_putchar(char c, int fd)
 {
 	write(fd, &c, 1);
 }

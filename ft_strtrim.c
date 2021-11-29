@@ -6,13 +6,13 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:57:47 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/18 13:57:52 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 15:48:48 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_suffix(const char *source, char const *set)
+static int	ft_suffix(const char *source, char const *set)
 {
 	int	i;
 	int	j;
@@ -35,7 +35,7 @@ int	ft_suffix(const char *source, char const *set)
 	return (i);
 }
 
-int	ft_prefix(const char *source, char const *set)
+static int	ft_prefix(const char *source, char const *set)
 {
 	int	i;
 	int	j;

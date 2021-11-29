@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:14:40 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/18 14:17:09 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 14:46:24 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *source1, char const *source2)
 	i = 0;
 	j = 0;
 	length = ft_strlen(source1) + ft_strlen(source2);
-	joined = malloc(sizeof(joined) + length + 1);
+	joined = malloc(sizeof(char) + length + 1);
 	if (!(joined))
 		return (NULL);
 	while (source1[i])

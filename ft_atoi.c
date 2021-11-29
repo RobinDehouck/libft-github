@@ -6,19 +6,13 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:36:05 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/24 13:50:08 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 15:52:26 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// 1 : skeep any space(s) before first digit
-// 2 : stop at first character which isn't a digit 
-// after encountering first digit
-// 3 : read up to one '-' or '+', otherwise return 0
-// 4 : if no digit, return 0
-
-int	ft_putnumber(const char *source, int i)
+static int	ft_putnumber(const char *source, int i)
 {
 	int	j;
 	int	number;
@@ -33,7 +27,7 @@ int	ft_putnumber(const char *source, int i)
 	return (number);
 }
 
-int	ft_clean(const char *source)
+static int	ft_clean(const char *source)
 {
 	int	i;
 
