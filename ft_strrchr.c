@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:52:39 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/10 13:01:18 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/28 17:17:57 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *source, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*located;
+	int i;
 
-	located = (char *) source;
-	i = ft_strlen(source);
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (located[i] == c)
-			return (&located[i]);
+		if (s[i] == (char)c)
+			return ((char*)s + i);
 		i--;
 	}
 	return (NULL);

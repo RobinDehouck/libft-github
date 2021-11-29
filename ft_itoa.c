@@ -3,92 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:54:22 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/18 13:55:12 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/28 17:29:52 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nblength(int nb)
+// test des fonction static qui ne s appellent que dans le fichier courant
+
+#include "libft.h"
+
+char	*ft_strmall(size_t size)
 {
-	int	i;
+	char	*str;
+
+	if (!(str = (char*)malloc(sizeof(*str) * (size + 1))))
+		return (NULL);
+	ft_bzero(str, size + 1);
+	return (str);
+}
+
+static int	count_size(int n)
+{
+	int i;
 
 	i = 0;
-	if (nb == 0)
-		return (1);
-	while (nb != 0)
+	if (n < 0)
+		n = -n;
+	while (n != 0)
 	{
-		nb = nb / 10;
+		n /= 10;
 		i++;
 	}
 	return (i);
 }
 
-char	*ft_convert(char *cnumber, int nb, int length, int *int_array)
+char		*ft_itoa(int num)
 {
-	int	i;
-	int	j;
+	char		*dest;
+	int			counter;
+	int			i;
+	long int	n;
 
-	j = 0;
+	n = num;
+	counter = count_size(n);
 	i = 0;
-	if (nb < 0)
+	if (n < 0 || counter == 0)
+		counter++;
+	if (!(dest = ft_strmall(counter)))
+		return (NULL);
+	if (n < 0)
 	{
-		cnumber[j] = '-';
-		j++;
-	}
-	while (i < length)
-	{		
-		cnumber[j] = int_array[i] + '0';
-		j++;
+		n = -n;
+		dest[0] = '-';
 		i++;
 	}
-	cnumber[j] = '\0';
-	return (cnumber);
-}
-
-int	*int_table(int nb, int length)
-{
-	int	*int_array;
-
-	int_array = malloc(sizeof(int) * length + 1);
-	if (int_array == NULL)
-		return (NULL);
-	if (nb < 0)
+	while (counter > i)
 	{
-		nb = nb * -1;
-	}	
-	while (nb != 0)
-	{
-		int_array[length] = nb % 10;
-		length--;
-		nb /= 10;
+		counter--;
+		dest[counter] = (n % 10) + '0';
+		n /= 10;
 	}
-	return (int_array);
-}
-
-char	*ft_itoa(int nb)
-{
-	int		length;
-	char	*cnumber;
-	int		*int_array;
-
-	int_array = int_table(nb, ft_nblength(nb) - 1);
-	length = ft_nblength(nb) + 1;
-	if (nb < 0)
-		length = length + 1;
-	cnumber = malloc(sizeof(char) * length);
-	if (cnumber == NULL)
-		return (NULL);
-	if (nb == -2147483648)
-	{
-		ft_strlcpy(cnumber, "-2147483648", 12);
-		return (cnumber);
-	}
-	cnumber = ft_convert(cnumber, nb, ft_nblength(nb), int_array);
-	return (cnumber);
+	return (dest);
 }
 /*
 int	main()
