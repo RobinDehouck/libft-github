@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:57:47 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/29 15:48:48 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2021/11/30 12:58:25 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_suffix(const char *source, char const *set)
+static int	ft_suffix(const char *source, char const *set, int start)
 {
 	int	i;
 	int	j;
@@ -23,7 +23,7 @@ static int	ft_suffix(const char *source, char const *set)
 	while (set[j])
 	{
 		count = 0;
-		if (set[j] == source[i])
+		if (set[j] == source[i] && i >= start)
 		{
 			i--;
 			count++;
@@ -72,20 +72,22 @@ char	*ft_strtrim(char const *source, char const *set)
 	if (trimmed == NULL)
 		return (NULL);
 	start = ft_prefix(source, set);
-	end = ft_suffix(source, set);
+	end = ft_suffix(source, set, start);
 	while (start <= end)
 	{
 		trimmed[i] = source[start];
 		i++;
 		start++;
 	}
+	if (ft_strlen(trimmed) == 0)
+		return (NULL);
 	trimmed[i] = 0;
 	return (trimmed);
 }
 
 /*
-{
 int	main()
-	printf("%s", ft_strtrim("boninn", "bon"));
+{
+	printf("%s", ft_strtrim("iiiii", "i"));
 }
 */
