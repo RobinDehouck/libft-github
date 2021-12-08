@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:57:47 by robindehouc       #+#    #+#             */
-/*   Updated: 2021/11/30 12:58:25 by robindehouc      ###   ########.fr       */
+/*   Updated: 2021/12/08 13:11:02 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,17 @@ char	*ft_strtrim(char const *source, char const *set)
 	if (!source)
 		return (NULL);
 	i = 0;
+	start = ft_prefix(source, set);
+	end = ft_suffix(source, set, start);
 	trimmed = malloc(sizeof(char) * ft_strlen(source) + 1);
 	if (trimmed == NULL)
 		return (NULL);
-	start = ft_prefix(source, set);
-	end = ft_suffix(source, set, start);
 	while (start <= end)
 	{
 		trimmed[i] = source[start];
 		i++;
 		start++;
 	}
-	if (ft_strlen(trimmed) == 0)
-		return (NULL);
 	trimmed[i] = 0;
 	return (trimmed);
 }
@@ -88,6 +86,7 @@ char	*ft_strtrim(char const *source, char const *set)
 /*
 int	main()
 {
-	printf("%s", ft_strtrim("iiiii", "i"));
+	
+	printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
 }
 */
