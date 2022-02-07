@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/12/08 12:42:47 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/07 13:38:47 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void		ft_putnbr_fd(int n, int fd);
 char		*ft_strtrim(char const *source, char const *set);
 char		**ft_split(char const *s, char charset);
 char		*ft_strjoin(char const *source1, char const *source2);
+void		ft_putchar(char c);
+void		ft_memdel(void **ap);
 
 #endif
