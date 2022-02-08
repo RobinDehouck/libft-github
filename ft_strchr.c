@@ -6,13 +6,13 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:44:33 by rdehouck          #+#    #+#             */
-/*   Updated: 2021/11/10 14:52:49 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 11:46:45 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *source, int c)
+char	*ft_strchr(char *source, int c)
 {
 	int		i;
 	char	*located;
