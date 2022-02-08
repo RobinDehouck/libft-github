@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:59:46 by rdehouck          #+#    #+#             */
-/*   Updated: 2022/02/08 11:44:32 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 11:45:14 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t		ft_strlcpy(char *dest, const char *source, size_t length);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
-char		*ft_strchr(const char *s, int c);
+char		*ft_strchr(char *s, int c);
 char		*ft_strrchr(const char *source, int c);
 int			ft_strncmp(const char *source1, const char *source2, size_t n);
 void		*ft_memchr(const void *source, int c, size_t n);
