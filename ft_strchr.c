@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:44:33 by rdehouck          #+#    #+#             */
-/*   Updated: 2022/02/08 11:46:45 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/08 11:52:22 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strchr(char *source, int c)
 	int		i;
 	char	*located;
 
+	if (!source)
+		return (0);
 	located = (char *)source;
 	i = 0;
 	if ((char) c == 0)
