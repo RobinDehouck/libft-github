@@ -6,17 +6,17 @@ This is a C library that provides a set of basic functions that can be used in C
 
 To use the library, include the `libft.h` header file in your project and link to the `libft.a` file during compilation.
 
-##Function List
+## Function List
 The following functions are provided by the library:
 
-##Character Testing
+## Character Testing
 int ft_isalpha(int n): tests for an alphabetic character.
 int ft_isdigit(int n): tests for a digit.
 int ft_isalnum(int n): tests for an alphanumeric character.
 int ft_isascii(int n): tests for an ASCII character.
 int ft_isprint(int n): tests for a printing character.
 
-##String Processing
+## String Processing
 size_t ft_strlen(const char *str): returns the length of a string.
 void *ft_memset(void *buf, int c, size_t len): fills a block of memory with a given value.
 void ft_bzero(void *string, size_t byte_length): write zeroes to a string
